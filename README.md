@@ -1,8 +1,6 @@
 # Image Library (ILib)
 
-This is a wrapper around stb_image and stb_image_write, it provides a single class, Image, which can be used as an object to store an image but also has static functions to simply get the bytes from an image file
-
-It could probably do with more work but it should work pretty well as it is
+This is a wrapper around [stb_image](https://github.com/nothings/stb/blob/master/stb_image.h) and [stb_image_write](https://github.com/nothings/stb/blob/master/stb_image_write.h), it provides a single class, Image, which can be used as an object to store an image but also has static functions to simply get the bytes from an image file
 
 ## Compiling
 
