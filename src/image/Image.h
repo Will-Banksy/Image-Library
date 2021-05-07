@@ -27,6 +27,9 @@ public:
 
 	void Save(std::string filename, ImageFileType fileType = FileType_Auto, int jpgQuality = 80);
 
+	/// Frees the memory containing the image data
+	void Free();
+
 	/// If <code>desiredFormat</code> is not <code>Format_Invalid</code> then the image will be loaded with the format specified
 	static uint8_t* LoadImage(const std::string& filename, int* width, int* height, ImageFormat* format, ImageFormat desiredFormat = Format_Invalid);
 	static void FreeImage(uint8_t* bytes);

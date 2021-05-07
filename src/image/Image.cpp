@@ -13,11 +13,19 @@ Image::Image(const std::string& filename, ImageFormat format) {
 }
 
 Image::~Image() {
-	FreeImage(m_Bytes);
+	if(m_Bytes) {
+		FreeImage(m_Bytes);
+		m_Bytes = nullptr;
+	}
 }
 
 void Image::Save(std::string filename, ImageFileType fileType, int jpgQuality) {
 	SaveImage(filename, m_Bytes, m_Width, m_Height, m_Format, fileType, jpgQuality);
+}
+
+void Free() {
+	FreeImage(m_Bytes);
+	m_Bytes = nullptr;
 }
 
 uint8_t* Image::LoadImage(const std::string& filename, int* width, int* height, ImageFormat* format, ImageFormat desiredFormat) {
