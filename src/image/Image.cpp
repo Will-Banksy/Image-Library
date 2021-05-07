@@ -23,7 +23,7 @@ void Image::Save(std::string filename, ImageFileType fileType, int jpgQuality) {
 	SaveImage(filename, m_Bytes, m_Width, m_Height, m_Format, fileType, jpgQuality);
 }
 
-void Free() {
+void Image::Free() {
 	FreeImage(m_Bytes);
 	m_Bytes = nullptr;
 }
